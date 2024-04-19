@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "es.niux.efc.data"
+    namespace = "es.niux.efc.domain"
     compileSdk = 34
 
     defaultConfig {
@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":data"))
 
     implementation(libs.androidx.core.ktx)
 
@@ -43,16 +44,9 @@ dependencies {
 
     implementation(libs.kotlinx.coroutines.android)
 
-    implementation(libs.square.retrofit)
-
     // region test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    testImplementation(libs.google.dagger.hilt.test)
-    kaptTest(libs.google.dagger.hilt.compiler)
-    androidTestImplementation(libs.google.dagger.hilt.test)
-    kaptAndroidTest(libs.google.dagger.hilt.compiler)
     // endregion
 }

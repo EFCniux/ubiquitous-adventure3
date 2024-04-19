@@ -1,6 +1,6 @@
-package es.niux.efc.data.source.network.demo.api
+package es.niux.efc.data.sourrces.network.demo.api
 
-import es.niux.efc.data.source.network.demo.api.io.output.ItemOutput
+import es.niux.efc.data.sourrces.network.demo.api.io.output.ItemOutput
 import retrofit2.http.GET
 
 interface DemoNetworkApi {

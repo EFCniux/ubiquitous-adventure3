@@ -1,11 +1,10 @@
-package es.niux.efc.data.parser.item
+package es.niux.efc.data.parsers.item
 
 import androidx.core.net.toUri
 import es.niux.efc.core.entity.Item
-import es.niux.efc.data.parser.tryParse
-import es.niux.efc.data.source.network.demo.api.io.output.ItemOutput
+import es.niux.efc.data.parsers.tryParse
+import es.niux.efc.data.sourrces.network.demo.api.io.output.ItemOutput
 import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.toSet
 

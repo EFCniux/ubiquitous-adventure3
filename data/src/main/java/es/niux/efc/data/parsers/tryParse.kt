@@ -1,4 +1,4 @@
-package es.niux.efc.data.parser
+package es.niux.efc.data.parsers
 
 import es.niux.efc.core.exception.CoreException
 

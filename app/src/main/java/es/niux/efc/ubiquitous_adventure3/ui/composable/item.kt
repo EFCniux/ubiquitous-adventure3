@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import coil.size.Scale
 import es.niux.efc.core.entity.Item
 import es.niux.efc.core.util.res.getDrawableUri
 import es.niux.efc.ubiquitous_adventure3.R
@@ -32,6 +33,7 @@ fun Item(
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(value.image)
+                    .scale(Scale.FILL)
                     .crossfade(true)
                     .build(),
                 contentDescription = null,

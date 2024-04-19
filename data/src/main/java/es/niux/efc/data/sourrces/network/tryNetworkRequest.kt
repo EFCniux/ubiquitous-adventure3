@@ -1,4 +1,4 @@
-package es.niux.efc.data.source.network
+package es.niux.efc.data.sourrces.network
 
 import es.niux.efc.core.exception.CoreException
 import kotlinx.coroutines.CoroutineDispatcher

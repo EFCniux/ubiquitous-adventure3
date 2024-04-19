@@ -1,4 +1,4 @@
-package es.niux.efc.data.source.network.demo.api.io.output
+package es.niux.efc.data.sourrces.network.demo.api.io.output
 
 data class ItemOutput(
     val id: String,

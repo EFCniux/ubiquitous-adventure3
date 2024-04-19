@@ -20,6 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ubiquitous-adventure3"
-include(":app")
-include(":data")
 include(":core")
+include(":app")
+include(":domain")
+include(":data")
