@@ -4,6 +4,7 @@ import es.niux.efc.core.exception.CoreException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.SerializationException
 import okhttp3.Response
 import retrofit2.HttpException
 import java.io.IOException
@@ -27,6 +28,13 @@ suspend fun <T> tryNetworkRequest(
             )
 
         onError(coreEx, e.response()?.raw())
+    } catch (e: SerializationException) {
+        val coreEx = CoreException
+            .Network.Parse(
+                cause = e
+            )
+
+        onError(coreEx, null)
     } catch (e: IOException) {
         val coreEx = CoreException
             .Network.Connection(
