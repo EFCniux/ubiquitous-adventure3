@@ -15,5 +15,9 @@ class DemoNetworkSource @Inject constructor(
 ) {
     suspend fun retrieveItems() = tryNetworkRequest(ioDispatcher) {
         api.retrieveItems()
+            .values
+            .asSequence()
+            .map { it.value }
+            .toSet()
     }
 }

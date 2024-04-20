@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.jetbrainsKotlinSerialization)
     alias(libs.plugins.jetbrainsKotlinKapt)
 }
 
@@ -42,8 +43,10 @@ dependencies {
     kapt(libs.google.dagger.hilt.compiler)
 
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.square.retrofit)
+    implementation(libs.square.retrofit.converter.kotlinx.serialization)
 
     // region test
     testImplementation(libs.junit)
