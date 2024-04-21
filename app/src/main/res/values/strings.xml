@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ubiquitous-adventure3</string>
+    <string name="action_retry_error">Retry</string>
+    <string name="error_network_connection">Could not connect to server</string>
+    <string name="error_network_server">Server failed with error %d</string>
+    <string name="error_network_parse">Could not understand server response</string>
 </resources>

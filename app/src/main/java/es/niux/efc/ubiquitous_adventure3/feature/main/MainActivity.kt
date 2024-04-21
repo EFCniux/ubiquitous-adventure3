@@ -32,6 +32,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
+import es.niux.efc.core.exception.CoreException
 import es.niux.efc.ubiquitous_adventure3.R
 import es.niux.efc.ubiquitous_adventure3.components.activity.BaseActivity
 import es.niux.efc.ubiquitous_adventure3.ui.composable.ItemGrid
@@ -72,7 +73,9 @@ fun MainActivityUi(
                         ) {
                             Icon(
                                 imageVector = Icons.Filled.Refresh,
-                                contentDescription = "Localized description"
+                                contentDescription = stringResource(
+                                    R.string.action_retry_error
+                                )
                             )
                         }
                     }
@@ -100,11 +103,30 @@ fun MainActivityUi(
     }
 
     state.error?.let { error ->
+        val errorMsg = when (error) {
+            is CoreException.Network.Connection -> stringResource(
+                id = R.string.error_network_connection
+            )
+
+            is CoreException.Network.Server -> stringResource(
+                id = R.string.error_network_server,
+                error.code
+            )
+
+            is CoreException.Network.Parse -> stringResource(
+                id = R.string.error_network_parse
+            )
+        }
+
+        val action = stringResource(
+            R.string.action_retry_error
+        )
+
         coroutineScope.launch {
             snackBarHostState
                 .showSnackbar(
-                    message = error.message ?: "err",
-                    actionLabel = "Retry",
+                    message = errorMsg,
+                    actionLabel = action,
                     duration = SnackbarDuration.Indefinite
                 )
                 .let {
