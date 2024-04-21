@@ -3,10 +3,12 @@ package es.niux.efc.ubiquitous_adventure3.ui.composable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -51,7 +53,7 @@ fun Item(
                 text = "${value.id} - ${value.name}",
                 modifier = Modifier
                     .padding(horizontal = 16.dp),
-                style = MaterialTheme.typography.titleSmall
+                style = MaterialTheme.typography.titleMedium
             )
             Text(
                 text = value.desc,
@@ -70,15 +72,20 @@ fun Item(
 @Preview
 @Composable
 fun ItemPreview() {
-    Item(
-        value = Item(
-            id = "1",
-            name = "Name",
-            desc = "Description",
-            image = LocalContext.current
-                .getDrawableUri(R.drawable.ic_launcher_foreground),
-        ),
-        modifier = Modifier
-            .padding(16.dp)
-    )
+    Surface(
+        modifier = Modifier.fillMaxWidth(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Item(
+            value = Item(
+                id = "1",
+                name = "Name",
+                desc = "Description",
+                image = LocalContext.current
+                    .getDrawableUri(R.drawable.ic_launcher_foreground),
+            ),
+            modifier = Modifier
+                .padding(16.dp)
+        )
+    }
 }
