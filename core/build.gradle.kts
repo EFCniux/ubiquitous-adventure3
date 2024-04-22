@@ -40,9 +40,18 @@ dependencies {
     implementation(libs.google.dagger.hilt.android)
     kapt(libs.google.dagger.hilt.compiler)
 
+    implementation(libs.kotlinx.coroutines.android)
+
     // region test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    testImplementation(libs.kotlinx.coroutines.test)
+
+    testImplementation(libs.google.dagger.hilt.test)
+    kaptTest(libs.google.dagger.hilt.compiler)
+    androidTestImplementation(libs.google.dagger.hilt.test)
+    kaptAndroidTest(libs.google.dagger.hilt.compiler)
     // endregion
 }

@@ -48,5 +48,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk.agent)
+    androidTestImplementation(libs.mockk.android)
+    androidTestImplementation(libs.mockk.agent)
+
+    testImplementation(libs.kotlinx.coroutines.test)
+
+    testImplementation(libs.cashapp.turbine)
     // endregion
 }

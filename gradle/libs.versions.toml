@@ -7,6 +7,12 @@ junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 
+# https://github.com/mockk/mockk
+mockk = "1.13.10"
+
+# https://github.com/cashapp/turbine
+turbine = "1.1.0"
+
 # https://developer.android.com/jetpack/androidx/explorer
 androidxCore = "1.12.0"
 androidxLifecycle = "2.7.0"
@@ -34,6 +40,11 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
+
+cashapp-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
@@ -54,6 +65,7 @@ google-dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compil
 google-dagger-hilt-test = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "google-dagger" }
 
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializaion" }
 
 square-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "squareRetrofit" }

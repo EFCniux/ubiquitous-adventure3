@@ -52,10 +52,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    testImplementation(libs.google.dagger.hilt.test)
-    kaptTest(libs.google.dagger.hilt.compiler)
-    androidTestImplementation(libs.google.dagger.hilt.test)
-    kaptAndroidTest(libs.google.dagger.hilt.compiler)
     // endregion
 }
