@@ -12,7 +12,21 @@ sealed class Either<out L, out R> {
     val isLeft get() = this is Left
     val isRight get() = this is Right
 
-    fun <T> fold(
+    inline fun ifLeft(
+        action: (L) -> Unit
+    ) = when (this) {
+        is Left -> action(this.value)
+        is Right -> Unit
+    }
+
+    inline fun ifRight(
+        action: (R) -> Unit
+    ) = when (this) {
+        is Left -> Unit
+        is Right -> action(this.value)
+    }
+
+    inline fun <T> fold(
         ifLeft: (L) -> T,
         ifRight: (R) -> T
     ) = when (this) {
@@ -27,14 +41,14 @@ sealed class Either<out L, out R> {
 fun <T> Left(value: T) = Either.Left(value)
 fun <T> Right(value: T) = Either.Right(value)
 
-fun <T, L : T, R> Either<L, R>.leftOr(
+inline fun <T, L : T, R> Either<L, R>.leftOr(
     ifRight: (R) -> T
 ) = when (this) {
     is Either.Left -> this.value
     is Either.Right -> ifRight(this.value)
 }
 
-fun <T, L, R : T> Either<L, R>.rightOr(
+inline fun <T, L, R : T> Either<L, R>.rightOr(
     ifLeft: (L) -> T
 ) = when (this) {
     is Either.Left -> ifLeft(this.value)
