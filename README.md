@@ -12,7 +12,7 @@ Featuring:
   <li>kotlin serializatiom https://github.com/Kotlin/kotlinx.serialization</li>
   <li>retrofit https://github.com/square/retrofit</li>
   <li>coil https://github.com/coil-kt/coil</li>
-  <li>mockk https://github.com/mockk/mockk/releases</li>
+  <li>mockk https://github.com/mockk/mockk</li>
   <li>turbine https://github.com/cashapp/turbine</li>
   <li>...and data layer catching</li>
 </ul>
