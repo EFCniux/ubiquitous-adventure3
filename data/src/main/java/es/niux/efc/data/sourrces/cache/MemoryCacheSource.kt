@@ -13,12 +13,12 @@ abstract class MemoryCacheSource<T>(
 
     override suspend fun cacheRead() = cache.value
 
-    override suspend fun cacheDelete() {
-        cache.value = Optional()
-    }
-
     override suspend fun cacheUpdate(value: T) {
         cache.value = Optional(value)
+    }
+
+    override suspend fun cacheDelete() {
+        cache.value = Optional()
     }
 
     override fun observe() = cache

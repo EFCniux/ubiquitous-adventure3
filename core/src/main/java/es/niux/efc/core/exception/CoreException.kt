@@ -1,6 +1,13 @@
 package es.niux.efc.core.exception
 
 sealed class CoreException : RuntimeException() {
+    sealed class Local : CoreException() {
+        class Database(
+            override val message: String? = null,
+            override val cause: Throwable? = null
+        ) : Local()
+    }
+
     sealed class Network : CoreException() {
         class Connection(
             override val message: String? = null,

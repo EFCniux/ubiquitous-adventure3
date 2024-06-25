@@ -12,15 +12,18 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import javax.inject.Named
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 class DataSourcesNetworkModule {
     @Provides
+    @Singleton
     @Named("json")
     fun provideJsonStringFormat(): StringFormat = Json
 
     @Provides
+    @Singleton
     @Named("json")
     fun provideJsonConverterFactory(
         @Named("json") json: StringFormat
@@ -29,6 +32,7 @@ class DataSourcesNetworkModule {
     )
 
     @Provides
+    @Singleton
     fun provideDemoNetworkApi(
         @Named("json") jsonConverterFactory: Converter.Factory
     ): DemoNetworkApi = Retrofit.Builder()

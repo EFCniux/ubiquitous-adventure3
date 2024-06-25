@@ -116,6 +116,10 @@ fun MainActivityUi(
             is CoreException.Network.Parse -> stringResource(
                 id = R.string.error_network_parse
             )
+
+            is CoreException.Local.Database -> stringResource(
+                id = R.string.error_local_database
+            )
         }
 
         val action = stringResource(

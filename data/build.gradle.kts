@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinSerialization)
     alias(libs.plugins.jetbrainsKotlinKapt)
+    alias(libs.plugins.googleDevtoolsKsp)
 }
 
 android {
@@ -47,6 +48,10 @@ dependencies {
 
     implementation(libs.square.retrofit)
     implementation(libs.square.retrofit.converter.kotlinx.serialization)
+
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     // region test
     testImplementation(libs.junit)
