@@ -58,7 +58,7 @@ class MainInteractor @Inject constructor(
             .flatMapLatest { forceRefresh ->
                 repository
                     .observeItems(forceRefresh = forceRefresh)
-                    .transform { emit(it.getOr { emptySet() }) }
+                    .map { it.getOr { emptySet() } }
                     .map { Left(it.toList()) }
                     .catch<Result> {
                         if (it is CoreException)

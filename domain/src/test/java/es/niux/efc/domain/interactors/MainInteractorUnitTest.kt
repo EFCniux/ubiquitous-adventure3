@@ -47,8 +47,7 @@ class MainInteractorUnitTest {
                         isLoading = true,
                         data = null,
                         error = null
-                    ),
-                    awaitItem()
+                    ), awaitItem()
                 )
                 assertEquals(
                     MainInteractor.State(
@@ -80,8 +79,7 @@ class MainInteractorUnitTest {
                         isLoading = true,
                         data = null,
                         error = null
-                    ),
-                    awaitItem()
+                    ), awaitItem()
                 )
                 assertEquals(
                     MainInteractor.State(
@@ -118,8 +116,7 @@ class MainInteractorUnitTest {
                         isLoading = true,
                         data = null,
                         error = null
-                    ),
-                    awaitItem()
+                    ), awaitItem()
                 )
                 assertEquals(
                     MainInteractor.State(
@@ -137,8 +134,7 @@ class MainInteractorUnitTest {
                         isLoading = true,
                         data = listOf(item),
                         error = null
-                    ),
-                    awaitItem()
+                    ), awaitItem()
                 )
                 assertEquals(
                     MainInteractor.State(
@@ -175,8 +171,7 @@ class MainInteractorUnitTest {
                         isLoading = true,
                         data = null,
                         error = null
-                    ),
-                    awaitItem()
+                    ), awaitItem()
                 )
                 assertEquals(
                     MainInteractor.State(
@@ -194,8 +189,7 @@ class MainInteractorUnitTest {
                         isLoading = true,
                         data = null,
                         error = null
-                    ),
-                    awaitItem()
+                    ), awaitItem()
                 )
                 assertEquals(
                     MainInteractor.State(
